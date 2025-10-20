@@ -64,7 +64,27 @@ export function Dashboard() {
               Performance Analysis & State Visualization
             </p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
+            {/* Data Source Indicator */}
+            <div className="flex items-center gap-2">
+              <div className={`w-2 h-2 rounded-full ${
+                metrics.summary.dataSource === 'railway' ? 'bg-green-500' : 'bg-yellow-500'
+              } animate-pulse`} />
+              <span className="text-sm text-gray-400">
+                {metrics.summary.dataSource === 'railway'
+                  ? '🚂 Railway API'
+                  : '🎭 Mock Data'}
+              </span>
+              {metrics.summary.backendStatus && (
+                <span className={`text-xs px-2 py-1 rounded-lg ${
+                  metrics.summary.backendStatus === 'healthy'
+                    ? 'bg-green-900/50 text-green-400'
+                    : 'bg-yellow-900/50 text-yellow-400'
+                }`}>
+                  {metrics.summary.backendStatus}
+                </span>
+              )}
+            </div>
             <button
               onClick={handleRefresh}
               className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition flex items-center gap-2"

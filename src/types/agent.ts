@@ -54,6 +54,9 @@ export interface DashboardMetrics {
   successRate: number;
   totalRequests: number;
   timestamp: number;
+  dataSource?: 'railway' | 'mock';
+  backendStatus?: string;
+  apiVersion?: string;
 }
 
 // API response types
