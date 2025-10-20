@@ -20,10 +20,10 @@ export function formatRelativeTime(timestamp: number): string {
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
 
-  if (seconds < 60) return `${seconds}s ago`;
-  if (minutes < 60) return `${minutes}m ago`;
-  if (hours < 24) return `${hours}h ago`;
-  return `${days}d ago`;
+  if (seconds < 60) return `há ${seconds}s`;
+  if (minutes < 60) return `há ${minutes}min`;
+  if (hours < 24) return `há ${hours}h`;
+  return `há ${days}d`;
 }
 
 /**

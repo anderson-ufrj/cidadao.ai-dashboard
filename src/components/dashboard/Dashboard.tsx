@@ -28,7 +28,7 @@ export function Dashboard() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin text-6xl mb-4">⏳</div>
-          <div className="text-xl text-gray-400">Loading agent metrics...</div>
+          <div className="text-xl text-gray-400">Carregando métricas dos agentes...</div>
         </div>
       </div>
     );
@@ -39,12 +39,12 @@ export function Dashboard() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="text-6xl mb-4">⚠️</div>
-          <div className="text-xl text-gray-400">Failed to load metrics</div>
+          <div className="text-xl text-gray-400">Falha ao carregar métricas</div>
           <button
             onClick={handleRefresh}
             className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition"
           >
-            Retry
+            Tentar Novamente
           </button>
         </div>
       </div>
@@ -89,7 +89,7 @@ export function Dashboard() {
               onClick={handleRefresh}
               className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition flex items-center gap-2"
             >
-              🔄 Refresh
+              🔄 Atualizar
             </button>
           </div>
         </div>
@@ -97,22 +97,22 @@ export function Dashboard() {
         {/* Summary Metrics */}
         <div className="mt-6 grid grid-cols-4 gap-4">
           <MetricCard
-            label="Active Agents"
+            label="Agentes Ativos"
             value={metrics.summary.activeAgents}
             trend="up"
           />
           <MetricCard
-            label="Avg Response Time"
+            label="Tempo de Resposta"
             value={`${Math.round(metrics.summary.avgResponseTime)}ms`}
             trend="down"
           />
           <MetricCard
-            label="Reflection Rate"
+            label="Taxa de Reflexão"
             value={`${Math.round(metrics.summary.reflectionRate * 100)}%`}
             trend="neutral"
           />
           <MetricCard
-            label="Success Rate"
+            label="Taxa de Sucesso"
             value={`${Math.round(metrics.summary.successRate * 100)}%`}
             trend="up"
           />
@@ -124,8 +124,8 @@ export function Dashboard() {
         {/* Agent Graph */}
         <Card className="h-[500px]">
           <CardHeader
-            title="Agent Orchestration Graph"
-            subtitle="Real-time state visualization"
+            title="Grafo de Orquestração"
+            subtitle="Visualização em tempo real dos estados"
           />
           <div className="h-[400px]">
             <AgentGraph
@@ -138,8 +138,8 @@ export function Dashboard() {
         {/* Performance Chart */}
         <Card className="h-[500px]">
           <CardHeader
-            title="Response Time Distribution"
-            subtitle="Average latency by agent"
+            title="Distribuição do Tempo de Resposta"
+            subtitle="Latência média por agente"
           />
           <div className="h-[400px]">
             <PerformanceChart data={metrics.performance} />
@@ -150,8 +150,8 @@ export function Dashboard() {
       {/* Agent Status Grid */}
       <Card>
         <CardHeader
-          title="Agent Status Monitor"
-          subtitle={`Monitoring ${Object.keys(AGENTS).length} agents`}
+          title="Monitor de Status dos Agentes"
+          subtitle={`Monitorando ${Object.keys(AGENTS).length} agentes`}
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {Object.entries(AGENTS).map(([id, agent]) => (
@@ -169,8 +169,8 @@ export function Dashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
           <CardHeader
-            title="Reflection Quality Scores"
-            subtitle="Self-evaluation and improvement metrics"
+            title="Pontuação de Qualidade de Reflexão"
+            subtitle="Métricas de autoavaliação e melhoria"
           />
           <div className="space-y-3">
             {Object.entries(metrics.reflections).map(([agentId, reflection]) => (
@@ -204,7 +204,7 @@ export function Dashboard() {
                   </div>
                 </div>
                 <div className="text-xs text-gray-500">
-                  {reflection.attempts} attempts
+                  {reflection.attempts} tentativas
                 </div>
               </div>
             ))}
@@ -213,13 +213,13 @@ export function Dashboard() {
 
         <Card>
           <CardHeader
-            title="System Performance"
-            subtitle="Key metrics and targets"
+            title="Desempenho do Sistema"
+            subtitle="Métricas principais e metas"
           />
           <div className="space-y-4">
             <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
               <div>
-                <div className="text-sm text-gray-400">Total Requests</div>
+                <div className="text-sm text-gray-400">Total de Requisições</div>
                 <div className="text-2xl font-bold text-white">
                   {metrics.summary.totalRequests}
                 </div>
@@ -228,19 +228,19 @@ export function Dashboard() {
             </div>
             <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
               <div>
-                <div className="text-sm text-gray-400">P95 Response Time</div>
+                <div className="text-sm text-gray-400">Tempo de Resposta P95</div>
                 <div className="text-2xl font-bold text-white">
                   {Math.round(metrics.summary.avgResponseTime * 1.5)}ms
                 </div>
               </div>
-              <div className="text-yellow-400">Target: &lt;200ms</div>
+              <div className="text-yellow-400">Meta: &lt;200ms</div>
             </div>
             <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
               <div>
-                <div className="text-sm text-gray-400">Reflection Threshold</div>
+                <div className="text-sm text-gray-400">Limite de Reflexão</div>
                 <div className="text-2xl font-bold text-white">0.80</div>
               </div>
-              <div className="text-purple-400">Quality Baseline</div>
+              <div className="text-purple-400">Linha de Base de Qualidade</div>
             </div>
           </div>
         </Card>

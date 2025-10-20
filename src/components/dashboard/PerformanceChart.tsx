@@ -55,7 +55,7 @@ export function PerformanceChart({ data }: PerformanceChartProps) {
         />
         <YAxis
           stroke="#94a3b8"
-          label={{ value: 'Response Time (ms)', angle: -90, position: 'insideLeft', fill: '#94a3b8' }}
+          label={{ value: 'Tempo de Resposta (ms)', angle: -90, position: 'insideLeft', fill: '#94a3b8' }}
         />
         <Tooltip
           contentStyle={{
@@ -65,8 +65,8 @@ export function PerformanceChart({ data }: PerformanceChartProps) {
             color: '#fff'
           }}
           formatter={(value: number, name: string, props: any) => [
-            `${value}ms (${props.payload.count} requests)`,
-            'Avg Response Time'
+            `${value}ms (${props.payload.count} requisições)`,
+            'Tempo Médio de Resposta'
           ]}
         />
         <Bar dataKey="avgTime" radius={[8, 8, 0, 0]}>

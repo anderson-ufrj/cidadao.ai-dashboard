@@ -59,23 +59,23 @@ export function AgentCard({ agent, state, onClick }: AgentCardProps) {
       {/* Metrics Grid */}
       <div className="grid grid-cols-2 gap-2 text-xs">
         <div>
-          <div className="text-gray-500 mb-1">Requests</div>
+          <div className="text-gray-500 mb-1">Requisições</div>
           <div className="font-semibold text-white">{state.requestCount}</div>
         </div>
         <div>
-          <div className="text-gray-500 mb-1">Avg Time</div>
+          <div className="text-gray-500 mb-1">Tempo Médio</div>
           <div className="font-semibold text-white">
             {Math.round(state.avgResponseTime)}ms
           </div>
         </div>
         <div>
-          <div className="text-gray-500 mb-1">Success</div>
+          <div className="text-gray-500 mb-1">Sucesso</div>
           <div className="font-semibold text-green-400">
             {Math.round(state.successRate * 100)}%
           </div>
         </div>
         <div>
-          <div className="text-gray-500 mb-1">Reflections</div>
+          <div className="text-gray-500 mb-1">Reflexões</div>
           <div className="font-semibold text-purple-400">
             {state.reflectionCount}
           </div>
@@ -86,7 +86,7 @@ export function AgentCard({ agent, state, onClick }: AgentCardProps) {
       {state.lastActive && (
         <div className="mt-3 pt-3 border-t border-white/5">
           <div className="text-xs text-gray-500">
-            Last active {formatRelativeTime(state.lastActive)}
+            Última atividade {formatRelativeTime(state.lastActive)}
           </div>
         </div>
       )}
