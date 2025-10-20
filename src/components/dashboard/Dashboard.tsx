@@ -53,15 +53,15 @@ export function Dashboard() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <Card>
+      {/* Main Title Card */}
+      <Card className="bg-white/95 dark:bg-gray-900/95 backdrop-blur">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Cidadão.AI Agent Orchestration
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-green-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
+              Orquestração de Agentes
             </h1>
-            <p className="text-gray-400 mt-2">
-              Performance Analysis & State Visualization
+            <p className="text-gray-600 dark:text-gray-400 mt-2">
+              Análise de Performance & Visualização em Tempo Real
             </p>
           </div>
           <div className="flex gap-4 items-center">
