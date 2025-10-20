@@ -28,7 +28,8 @@ export function AgentGraph({ agentStates, highlightedAgent }: AgentGraphProps) {
           label: agent.name,
           color: agent.color,
           layer: agent.layer,
-          role: agent.role
+          role: agent.role,
+          image: agent.image || ''
         }
       });
     });
@@ -52,18 +53,27 @@ export function AgentGraph({ agentStates, highlightedAgent }: AgentGraphProps) {
           selector: 'node',
           style: {
             'background-color': 'data(color)',
+            'background-image': 'data(image)',
+            'background-fit': 'cover',
+            'background-clip': 'none',
+            'background-opacity': 1,
             'label': 'data(label)',
             'color': '#fff',
-            'text-valign': 'center',
+            'text-valign': 'bottom',
             'text-halign': 'center',
-            'font-size': '10px',
+            'text-margin-y': -10,
+            'font-size': '11px',
             'font-weight': 'bold',
-            'width': 40,
-            'height': 40,
-            'border-width': 2,
-            'border-color': '#fff',
+            'width': 60,
+            'height': 60,
+            'border-width': 3,
+            'border-color': 'data(color)',
             'text-outline-width': 2,
             'text-outline-color': '#000',
+            'text-background-color': '#000',
+            'text-background-opacity': 0.7,
+            'text-background-padding': '3px',
+            'text-background-shape': 'roundrectangle',
             'transition-property': 'border-width, width, height',
             'transition-duration': 300
           }
@@ -83,35 +93,47 @@ export function AgentGraph({ agentStates, highlightedAgent }: AgentGraphProps) {
         {
           selector: '.active',
           style: {
-            'border-width': 4,
+            'border-width': 5,
             'border-color': '#22c55e',
-            'width': 50,
-            'height': 50
+            'width': 70,
+            'height': 70,
+            'overlay-color': '#22c55e',
+            'overlay-opacity': 0.3,
+            'overlay-padding': 5
           }
         },
         {
           selector: '.thinking',
           style: {
             'border-color': '#eab308',
-            'border-width': 4,
-            'width': 48,
-            'height': 48
+            'border-width': 5,
+            'width': 68,
+            'height': 68,
+            'overlay-color': '#eab308',
+            'overlay-opacity': 0.3,
+            'overlay-padding': 4
           }
         },
         {
           selector: '.acting',
           style: {
             'border-color': '#3b82f6',
-            'border-width': 4,
-            'width': 48,
-            'height': 48
+            'border-width': 5,
+            'width': 68,
+            'height': 68,
+            'overlay-color': '#3b82f6',
+            'overlay-opacity': 0.3,
+            'overlay-padding': 4
           }
         },
         {
           selector: '.error',
           style: {
             'border-color': '#ef4444',
-            'border-width': 4
+            'border-width': 5,
+            'overlay-color': '#ef4444',
+            'overlay-opacity': 0.4,
+            'overlay-padding': 3
           }
         }
       ],

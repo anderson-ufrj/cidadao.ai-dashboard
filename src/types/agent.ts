@@ -12,6 +12,7 @@ export interface Agent {
   color: string;
   layer: AgentLayer;
   description?: string;
+  image?: string;
 }
 
 // Runtime agent state

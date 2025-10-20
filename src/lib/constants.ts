@@ -9,7 +9,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Master Orchestrator',
     color: '#ef4444',
     layer: 'orchestration',
-    description: 'Orchestrates all agents using ReAct pattern'
+    description: 'Orchestrates all agents using ReAct pattern',
+    image: '/agents/abaporu.png'
   },
   ayrton_senna: {
     id: 'ayrton_senna',
@@ -17,7 +18,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Intent Router',
     color: '#f59e0b',
     layer: 'orchestration',
-    description: 'Semantic routing and intent classification'
+    description: 'Semantic routing and intent classification',
+    image: '/agents/senna.png'
   },
   zumbi: {
     id: 'zumbi',
@@ -25,7 +27,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Anomaly Detection',
     color: '#8b5cf6',
     layer: 'analysis',
-    description: 'FFT spectral analysis, deviation detection'
+    description: 'FFT spectral analysis, deviation detection',
+    image: '/agents/zumbi.png'
   },
   anita: {
     id: 'anita',
@@ -33,7 +36,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Statistical Analysis',
     color: '#06b6d4',
     layer: 'analysis',
-    description: 'Statistical data analysis, correlation matrices'
+    description: 'Statistical data analysis, correlation matrices',
+    image: '/agents/anita.png'
   },
   oxossi: {
     id: 'oxossi',
@@ -41,7 +45,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Fraud Detection',
     color: '#ec4899',
     layer: 'analysis',
-    description: '7+ fraud pattern detection algorithms'
+    description: '7+ fraud pattern detection algorithms',
+    image: '/agents/oxossi.png'
   },
   obaluae: {
     id: 'obaluae',
@@ -49,7 +54,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Corruption Detection',
     color: '#f43f5e',
     layer: 'analysis',
-    description: "Benford's Law, network analysis"
+    description: "Benford's Law, network analysis",
+    image: '/agents/obaluaie.png'
   },
   ceuci: {
     id: 'ceuci',
@@ -57,7 +63,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Predictive AI',
     color: '#10b981',
     layer: 'analysis',
-    description: 'Predictive ML, time series forecasting'
+    description: 'Predictive ML, time series forecasting',
+    image: '/agents/ceuci.png'
   },
   lampiao: {
     id: 'lampiao',
@@ -65,7 +72,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Regional Analysis',
     color: '#f97316',
     layer: 'analysis',
-    description: 'Geospatial analysis, regional patterns'
+    description: 'Geospatial analysis, regional patterns',
+    image: '/agents/lampiao.png'
   },
   drummond: {
     id: 'drummond',
@@ -73,7 +81,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'NLG',
     color: '#3b82f6',
     layer: 'communication',
-    description: 'Natural language generation with poetry'
+    description: 'Natural language generation with poetry',
+    image: '/agents/drummond.png'
   },
   tiradentes: {
     id: 'tiradentes',
@@ -81,7 +90,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Reporter',
     color: '#14b8a6',
     layer: 'communication',
-    description: 'Multi-format report generation'
+    description: 'Multi-format report generation',
+    image: '/agents/tiradentes.png'
   },
   niemeyer: {
     id: 'niemeyer',
@@ -89,7 +99,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Visualizer',
     color: '#a855f7',
     layer: 'communication',
-    description: 'Plotly charts, NetworkX graphs'
+    description: 'Plotly charts, NetworkX graphs',
+    image: '/agents/niemeyer.png'
   },
   quiteria: {
     id: 'quiteria',
@@ -97,7 +108,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Security',
     color: '#dc2626',
     layer: 'governance',
-    description: 'MITRE ATT&CK, UEBA, threat detection'
+    description: 'MITRE ATT&CK, UEBA, threat detection',
+    image: '/agents/quiteria.png'
   },
   bonifacio: {
     id: 'bonifacio',
@@ -105,7 +117,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Legal',
     color: '#7c3aed',
     layer: 'governance',
-    description: 'Legal compliance, policy analysis'
+    description: 'Legal compliance, policy analysis',
+    image: '/agents/bonifacio.png'
   },
   dandara: {
     id: 'dandara',
@@ -113,7 +126,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Social Justice',
     color: '#db2777',
     layer: 'governance',
-    description: 'Social justice metrics, equity analysis'
+    description: 'Social justice metrics, equity analysis',
+    image: '/agents/dandara.png'
   },
   nana: {
     id: 'nana',
@@ -121,7 +135,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Memory',
     color: '#6366f1',
     layer: 'support',
-    description: 'Context management, session state'
+    description: 'Context management, session state',
+    image: '/agents/nana.png'
   },
   machado: {
     id: 'machado',
@@ -129,7 +144,8 @@ export const AGENTS: Record<string, Agent> = {
     role: 'Narrative',
     color: '#0891b2',
     layer: 'support',
-    description: 'Story analysis, narrative patterns'
+    description: 'Story analysis, narrative patterns',
+    image: '/agents/machado.png'
   }
 };
 
