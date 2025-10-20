@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { AgentMetricsResponse, ReflectionMetrics } from '@/types/agent';
+import { AgentMetricsResponse, ReflectionMetrics, AgentState } from '@/types/agent';
 import { AGENTS } from '@/lib/constants';
 import { apiClient } from '@/lib/api-client';
 import {
@@ -59,7 +59,7 @@ export async function GET() {
 
         if (realAgent || healthAgent) {
           // Map real agent status to our state model
-          const state = realAgent?.status === 'active' ? 'IDLE' :
+          const state: AgentState = realAgent?.status === 'active' ? 'IDLE' :
                        realAgent?.status === 'busy' ? 'ACTING' :
                        healthAgent?.status === 'available' ? 'IDLE' : 'ERROR';
 

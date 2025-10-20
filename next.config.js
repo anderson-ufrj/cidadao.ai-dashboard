@@ -10,10 +10,6 @@ const nextConfig = {
     minimumCacheTTL: 60,
   },
 
-  // Reduz o tamanho do bundle
-  experimental: {
-    optimizeCss: true,
-  },
 
   // Headers de segurança
   async headers() {
